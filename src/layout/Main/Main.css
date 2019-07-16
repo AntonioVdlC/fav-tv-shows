@@ -1,0 +1,8 @@
+@import "../../index.css";
+
+.main {
+  min-height: calc(100vh - (var(--header-height) + var(--footer-height)));
+  width: var(--main-width);
+  max-width: var(--main-max-width);
+  margin: auto;
+}

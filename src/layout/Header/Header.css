@@ -1,0 +1,17 @@
+@import "../../index.css";
+
+.header {
+  background-color: var(--color-primary);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+}
+  .title, .title a {
+    color: var(--color-white);
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-m);
+    width: var(--main-width);
+    max-width: var(--main-max-width);
+    margin: auto;
+    text-decoration: none;
+  }
