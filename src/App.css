@@ -1,0 +1,8 @@
+@import "./index.css";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: var(--color-black);
+  font-family: var(--font-family-primary);
+}

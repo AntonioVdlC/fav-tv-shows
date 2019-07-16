@@ -1,0 +1,27 @@
+:root {
+  --color-primary: #007777;
+
+  --color-complementary: #c65a00;
+  --color-complementary-lighter: #ffc798;
+
+  --color-black: #000d0d;
+  --color-white: #ffffff;
+  --color-grey: #6A6A6A;
+
+  --font-family-primary: Futura, "Open Sans", Verdana, sans-serif;
+  --font-family-secondary: Palatino, "Times New Roman", "Book Antiqua", serif;
+
+  --font-size-xs: 0.5rem;
+  --font-size-s: 0.75rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.5rem;
+  --font-size-xl: 2rem;
+  --font-size-xxl: 2.5rem;
+  --font-size-xxxl: 4rem;
+
+  --header-height: 72px;
+  --footer-height: 72px;
+
+  --main-width: 88vw;
+  --main-max-width: 1024px;
+}
