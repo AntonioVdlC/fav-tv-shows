@@ -1,22 +1,36 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import Footer from "../../layout/Footer";
 import Header from "../../layout/Header";
 import Main from "../../layout/Main";
 
-const Home = ({ history }) => {
+import MovieList from "../../components/MovieList";
+
+import api from "../../utils/api";
+
+function Home({ history }) {
+  const [favourites, setFavourites] = useState([]);
+
+  useEffect(() => {
+    // TODO: Add loading and error states
+    api.get("favourites").then(result => setFavourites(result));
+  }, []);
+
   return (
     <Fragment>
       <Header
         isSearchVisible={true}
         onSearchClick={() => history.push("/search")}
       />
-      <Main></Main>
+      <Main>
+        {/* TODO: Add Loading and Error components */}
+        <MovieList movies={favourites} />
+      </Main>
       <Footer />
     </Fragment>
   );
-};
+}
 
 Home.propTypes = {
   history: PropTypes.shape({

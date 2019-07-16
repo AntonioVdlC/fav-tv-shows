@@ -1,14 +1,30 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 
 import Footer from "../../layout/Footer";
 import Header from "../../layout/Header";
 import Main from "../../layout/Main";
 
-const Details = () => {
+import Show from "../../components/Show";
+
+import api from "../../utils/api";
+
+const Details = ({
+  match: {
+    params: { id }
+  }
+}) => {
+  const [show, setShow] = useState();
+
+  useEffect(() => {
+    api.get("show", { params: [id] }).then(({ data }) => setShow(data));
+  }, []);
+
   return (
     <Fragment>
       <Header isSearchVisible={false} />
-      <Main></Main>
+      <Main>
+        <Show show={show} />
+      </Main>
       <Footer />
     </Fragment>
   );
