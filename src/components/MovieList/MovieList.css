@@ -1,0 +1,26 @@
+@import "../../index.css";
+
+.movie-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 30%);
+  grid-gap: 1em;
+  max-width: 1200px;
+  margin: 12px auto;
+  padding: 0 12px;
+  width: 100%;
+}
+  .movie-list li {
+    text-align: center;
+  }
+  .movie-list li:hover {
+    box-shadow: 1px 1px 2px 2px lightgrey;
+  }
+    .movie-list li a {
+      text-decoration: none;
+      color: var(--color-black);
+    }
+
+.movie-image {
+  width: 100%;
+}

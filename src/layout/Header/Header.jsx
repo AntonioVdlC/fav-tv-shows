@@ -4,7 +4,12 @@ import PropTypes from "prop-types";
 
 import styles from "./Header.css";
 
-const Header = ({ isSearchVisible, onSearchClick, onSearchInputChange }) => (
+const Header = ({
+  isSearchVisible,
+  onSearchClick,
+  onSearchInputChange,
+  inputRef
+}) => (
   <header className={styles.header}>
     <h1 className={styles.title}>
       <Link to="/">Fav TV Shows</Link>
@@ -12,6 +17,8 @@ const Header = ({ isSearchVisible, onSearchClick, onSearchInputChange }) => (
     {isSearchVisible ? (
       <input
         type="text"
+        placeholder="Search ..."
+        ref={inputRef}
         onClick={onSearchClick}
         onKeyUp={onSearchInputChange}
       />
