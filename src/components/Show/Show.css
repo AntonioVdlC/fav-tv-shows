@@ -1,0 +1,22 @@
+@import "../../index.css";
+
+.show {
+  margin: 12px;
+}
+
+.movie-info {
+  display: flex;
+  align-items: baseline;
+}
+  .movie-name {
+    margin: 0;
+    margin-left: 12px;
+    font-size: var(--font-size-xl);
+    text-transform: uppercase;
+  }
+
+.movie-summary {
+  font-family: var(--font-family-secondary);
+  text-align: justify;
+  white-space: pre-line;
+}
