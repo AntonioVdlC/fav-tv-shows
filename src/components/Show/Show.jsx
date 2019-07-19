@@ -1,10 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { MovieType } from "../../types";
 
 import styles from "./Show.css";
 
-function Show({ show }) {
+function Show({ show, isFavourite, onToggleFavourite }) {
   return show ? (
     <div className={styles.show}>
       <div className={styles["movie-info"]}>
@@ -13,7 +14,18 @@ function Show({ show }) {
           className={styles["movie-image"]}
           alt={show.name}
         />
-        <p className={styles["movie-name"]}>{show.name}</p>
+        <p className={styles["movie-name"]}>
+          {show.name}{" "}
+          <span
+            className={styles["movie-favourite"]}
+            role={"button"}
+            tabIndex="-1"
+            onClick={onToggleFavourite}
+            onKeyUp={onToggleFavourite}
+          >
+            {isFavourite ? "★" : "☆"}
+          </span>
+        </p>
       </div>
       <p className={styles["movie-summary"]}>
         {/* 
@@ -27,7 +39,9 @@ function Show({ show }) {
 }
 
 Show.propTypes = {
-  show: MovieType
+  show: MovieType,
+  isFavourite: PropTypes.bool.isRequired,
+  onToggleFavourite: PropTypes.func.isRequired
 };
 
 export default Show;

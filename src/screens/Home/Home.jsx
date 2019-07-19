@@ -14,7 +14,7 @@ function Home({ history }) {
 
   useEffect(() => {
     // TODO: Add loading and error states
-    api.get("favourites").then(result => setFavourites(result));
+    api.get("favourites").then(({ data }) => setFavourites(data));
   }, []);
 
   return (
